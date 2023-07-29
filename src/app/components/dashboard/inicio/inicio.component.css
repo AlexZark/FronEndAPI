@@ -1,0 +1,169 @@
+.tabla-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f7f7f7;
+  }
+  
+  .tabla-usuarios th,
+  .tabla-usuarios td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .tabla-usuarios th {
+    background-color: #4287f5;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .tabla-usuarios tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .tabla-usuarios tr:hover {
+    background-color: #d0e4fc;
+    cursor: pointer;
+  }
+  
+  .tabla-usuarios td {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo para el encabezado (cabezera) */
+  .encabezado {
+    text-align: center;
+    font-size: 24px;
+    color: #4287f5;
+    margin-bottom: 20px;
+  }
+  /* Estilos para los botones */
+.pagina-boton {
+    background-color: #4287f5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagina-boton:hover {
+    background-color: #3366cc;
+  }
+  
+  /* Estilos para el texto de la página actual */
+  .pagina-actual {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  /* Estilos para el contenedor que centrará los botones */
+  .centro-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .container{
+    margin-left: 10%;
+  }
+  .registrar2 {
+    position: absolute;
+    top: 50px; /* Ajusta la posición vertical según tu preferencia */
+    left: 50px; /* Ajusta la posición horizontal según tu preferencia */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    height: 60%;
+    width: 30%;
+    text-align: center;
+    margin-left: 32%;
+    margin-top: 2%;
+  }
+  
+  .registrar2 .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .registrar2 label {
+    font-weight: bold;
+  }
+  
+  .registrar2 input[type="text"],
+  .registrar2 input[type="password"],
+  .registrar2 textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #007bff; /* Aumentar el grosor del borde y cambiar el color */
+        border-radius: 5px;
+  }
+  
+  .registrar2 textarea {
+    resize: vertical;
+  }
+  
+  .registrar2 button[type="submit"] {
+    display: block;
+    width: 40%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10%;
+  }
+  
+  .registrar2 button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  .cerrar {
+    display: flex;
+    padding: 10px 20px ;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 65%;
+    margin-top: -9%;
+  }
+  .yyy{
+    margin-left: 5px;
+    width: 30%;
+    height: 10%;
+  }
+  /* Estilos personalizados para el botón */
+.custom-button {
+    background-color: #f50057; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none; /* Eliminar el borde */
+    border-radius: 8px; /* Añadir bordes redondeados */
+    padding: 12px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Agregar una sombra */
+    transition: background-color 0.3s, transform 0.1s; /* Efectos de transición */
+  }
+  
+  .custom-button:hover {
+    background-color: #d50050; /* Cambiar el color de fondo al pasar el cursor */
+    transform: scale(1.05); /* Efecto de escala al pasar el cursor */
+  }
+  
+  .botoneditar{
+   border: none; 
+  }

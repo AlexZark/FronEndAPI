@@ -1,0 +1,105 @@
+<div class="container">
+    <mat-toolbar>
+      <span>Clientes</span>
+    
+        
+     
+    </mat-toolbar>
+
+    <br>
+    <button mat-raised-button color="primary" class="custom-button" (click)="mostrarFormulario()">Agregar</button>
+    <br>
+    <br>
+    <script src="https://kit.fontawesome.com/646ac4fad6.js" crossorigin="anonymous"></script>
+    
+    <h1 class="encabezado">Tabla de Usuarios</h1>
+    <table class="tabla-usuarios">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Edad</th>
+          <th>Email</th>
+          <th>Acciones</th> <!-- Nueva columna para los botones -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of Usuarios.slice((paginaActual - 1) * elementosPorPagina, paginaActual * elementosPorPagina)">
+          <td>{{ usuario.id }}</td>
+          <td>{{ usuario.nombres }}</td>
+          <td>{{ usuario.apellidos }}</td>
+          <td>{{ usuario.edad }}</td>
+          <td>{{ usuario.email }}</td>
+          <td>
+            <button (click)="abrirFormularioEditar(usuario)" class="">
+              <img src="https://cdn-icons-png.flaticon.com/128/9004/9004233.png" alt="Editar" style=" height: 30px;">
+            </button>
+                      <button (click)="eliminarRegistro(usuario.id)" class="">
+              <img src="https://cdn-icons-png.flaticon.com/128/6861/6861362.png" alt="Eliminar" style=" height: 30px;">
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="centro-horizontal">
+      <button class="pagina-boton" (click)="paginaActual = paginaActual - 1" [disabled]="paginaActual === 1">Anterior</button>
+      <span class="pagina-actual">Página {{ paginaActual }}</span>
+      <button class="pagina-boton" (click)="paginaActual = paginaActual + 1" [disabled]="Usuarios.length <= paginaActual * elementosPorPagina">Siguiente</button>
+    </div>
+    <div *ngIf="formularioActivo" class="registrar2"  >
+      <h2>Formulario de registro de usuarios</h2>
+      <form  enctype="multipart/form-data">
+        <label for="nombre">nombres:</label>
+        <input type="text" id="nombres" name="nombres" required [(ngModel)]="nombres">
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellidos" name="apellidos" required [(ngModel)]="apellidos">
+        <br><br>
+        <label for="contrasena">email:</label>
+        <input type="email" id="email"  class="yyy" name="email" required [(ngModel)]="email">
+
+        <label for="descripcion">edad:</label>
+        <input type="number"  class="yyy"  id="edad" name="edad"   required [(ngModel)]="edad" >
+<br><br>
+        <label for="foto">Contraseña:</label>
+        <input type="password"  id="password" name="password"   required [(ngModel)]="password" >
+
+        <br><br>
+        <div class="botonera">
+          <button type="submit" (click)="!formularioValido() ; submitForm()">Registrar</button>
+          <button (click)="closeModal()" class="cerrar" >Cerrar</button>
+        </div>
+        
+      </form>
+    </div>
+
+    <div *ngIf="formularioEditarActivo" class="registrar2">
+      <h2>Editar Registro</h2>
+    <form (submit)="actualizarRegistro()">
+      <label for="nombre">nombres:</label>
+      <input type="text" id="nombres" name="nombres" required [(ngModel)]="this.registroSeleccionado.nombres">
+
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellidos" name="apellidos" required [(ngModel)]="this.registroSeleccionado.apellidos">
+      <br><br>
+      <label for="contrasena">email:</label>
+      <input type="email" id="email"  class="yyy" name="email" required [(ngModel)]="this.registroSeleccionado.email">
+
+      <label for="descripcion">edad:</label>
+      <input type="number"  class="yyy"  id="edad" name="edad"   required [(ngModel)]="this.registroSeleccionado.edad" >
+<br><br>
+      <label for="foto">Contraseña:</label>
+      <input type="password"  id="password" name="password"   required [(ngModel)]="this.registroSeleccionado.password" >
+
+        <br><br>
+            <div class="botonera">
+              <button type="submit">Guardar Cambios</button>
+              <button (click)="cerrarFormularioEditar()" class="cerrar">Cerrar</button>
+            </div>
+    
+     
+    
+      </form>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="body">
+
+    <div class="login">
+        <img [src]="logo" alt="" width="50%" height="80%">
+        <h1 class="h1 mb-3 fw-normal">Registro</h1>
+    <div class="register">
+        <form class="example-form">
+
+          <form  enctype="multipart/form-data">
+            <label for="nombre">Nombre:</label>
+            <p></p>
+            <input type="text" id="nombres" name="nombres" required [(ngModel)]="nombres">
+            <p></p>
+            <label for="apellido">Apellido:</label>
+            <p></p>
+            <input type="text" id="apellidos" name="apellidos" required [(ngModel)]="apellidos">
+            <p></p>
+            <label for="contrasena">Email:</label>
+          <p></p>
+            <input type="email" id="email"  class="yyy" name="email" required [(ngModel)]="email">
+    <p></p>
+            <label for="descripcion">Edad:</label>
+            <br><br>
+            <input type="number"  class="yyy"  id="edad" name="edad"   required [(ngModel)]="edad" >
+   <p></p>
+            <label for="foto">Contraseña:</label>
+            <p></p>
+            <input type="password"  id="password" name="password"   required [(ngModel)]="password" >
+    
+            <br><br>
+            <div class="botonera">
+              <button type="submit" (click)="!formularioValido() ; submitForm();ingresar()">Registrar</button>
+              
+            </div>
+            
+          </form>
+          <br>
+          <div>
+            Ya tienes cuenta?
+            <a routerLink="/login"><b>Inicia sesion</b></a>
+          </div>
+<!---->
+            
+          </form>
+          <p></p>
+              </div>
+    </div>
+</div>

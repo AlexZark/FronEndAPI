@@ -1,0 +1,91 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+/* Ajustar el ancho del menú lateral */
+.mat-drawer.mat-drawer-side {
+  width: 300px; /* Puedes ajustar el valor según tus necesidades */
+  height: 100vh;
+}
+
+/* Utilizar flexbox para ajustar elementos dentro del menú lateral */
+.mat-drawer-content {
+  display: flex;
+}
+
+/* Ajustar el espacio entre los elementos dentro del menú */
+.mat-grid-tile {
+  display: flex;
+  align-items: center;
+}
+.sidenav-container {
+  display: flex;
+} 
+mat-sidenav {
+  width: 10%; /* Ancho del menú lateral */
+  background-color: #393737;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+/* Estilos para el contenido del menú lateral y la barra de herramientas */
+
+
+
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+/* Estilos para el icono de logout */
+.example-icon {
+  margin-left: 8px;
+}
+.user-info {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-info p {
+  margin: 0;
+  font-size: 18px;
+  color: #edeaea;
+}
+
+/* Estilos para los botones en el menú lateral */
+mat-grid-tile {
+  padding: 10px;
+}
+
+mat-grid-tile button {
+  width: 100%;
+  background-color: #393737;
+  
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: left;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+}
+
+mat-grid-tile button:hover {
+  background-color: #3366cc;
+}
+
+/* Estilos para el contenido de la barra de herramientas */
+
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+/* Estilos para el icono de logout */
+.example-icon {
+  margin-left: 8px;
+}

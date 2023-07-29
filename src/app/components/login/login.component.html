@@ -1,0 +1,31 @@
+<div class="body">
+  <div class="login">
+    <img [src]="logo" alt="" width="50%" height="80%">
+    <h1 class="h3 mb-3 fw-normal">Iniciar Sesion</h1>
+
+    <mat-form-field class="ancho" appearance="fill">
+      <mat-label>Usuario</mat-label>
+      <input matInput required [(ngModel)]="correo">
+    </mat-form-field>
+
+    <mat-form-field class="ancho" appearance="fill">
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" required [(ngModel)]="contrasena">
+    </mat-form-field>
+
+    <br>
+
+    <button (click)="ingresar()" class="ancho" mat-raised-button mat-button color="primary" type="submit"
+      [disabled]="!validarCamposRellenos() || loading">
+      <span *ngIf="!loading">Ingresar</span>
+      <mat-spinner *ngIf="loading" diameter="24"></mat-spinner>
+    </button>
+
+    <p></p>
+
+    <div>
+      No tienes una cuenta?
+      <a routerLink="/registro"><b>Registrate</b></a>
+    </div>
+  </div>
+</div>

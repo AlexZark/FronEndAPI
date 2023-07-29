@@ -1,0 +1,100 @@
+<div class="container">
+    <mat-toolbar>
+      <span>Libros </span>
+    
+    </mat-toolbar>
+    <br>
+    <button mat-raised-button color="primary" class="custom-button" (click)="mostrarFormulario()">Agregar</button>
+    <br>
+    <br>
+    <script src="https://kit.fontawesome.com/646ac4fad6.js" crossorigin="anonymous"></script>
+    <h1 class="encabezado">Tabla de Libros</h1>
+      <!-- tu-componente.component.html -->
+<table class="table table-borderless tabla-livros">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>titulo</th>
+      <th>genero</th>
+      <th>aniopublicacion</th>
+      <th>ISBN</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let libro of livto .slice((paginaActual - 1) * elementosPorPagina, paginaActual * elementosPorPagina)">
+      <td>{{ libro.id }}</td>
+      <td>{{ libro.titulo }}</td>
+      <td>{{ libro.genero }}</td>
+      <td>{{ libro.aniopublicacion }}</td>
+      <td>{{ libro.ISBN }}</td>
+      <td>
+        <!-- Imágenes para las acciones -->
+        <button (click)="abrirFormularioEditar(libro)">
+          <img src="https://cdn-icons-png.flaticon.com/128/9004/9004233.png" alt="Editar" style=" height: 30px;">
+        </button>
+        <button (click)="eliminarRegistroL(libro.id)">
+          <img src="https://cdn-icons-png.flaticon.com/128/6861/6861362.png" alt="Eliminar" style=" height: 30px;">
+        </button>
+
+      </td>
+    </tr>
+  </tbody>
+</table> <div class="centro-horizontal">
+  <button class="pagina-boton" (click)="paginaActual = paginaActual - 1" [disabled]="paginaActual === 1">Anterior</button>
+  <span class="pagina-actual">Página {{ paginaActual }}</span>
+  <button class="pagina-boton" (click)="paginaActual = paginaActual + 1" [disabled]="livto.length <= paginaActual * elementosPorPagina">Siguiente</button>
+</div>
+
+<div *ngIf="formularioActivo" class="registrar2"  >
+  <h2>Formulario de registro de usuarios</h2>
+  <form  enctype="multipart/form-data">
+    <label for="nombre">titulo:</label>
+    <input type="text" id="titulo" name="titulo" required [(ngModel)]="titulo">
+
+    <label for="apellido">genero:</label>
+    <input type="text" id="genero" name="genero" required [(ngModel)]="genero">
+    <br><br>
+    <label for="contrasena">año de publicacion:</label>
+    <input type="number" id="aniopublicacion"  class="yyy" name="aniopublicacion" required [(ngModel)]="aniopublicacion">
+
+    <label for="descripcion">ISBN:</label>
+    <input type="text"  class="yyy"  id="ISBN" name="ISBN"   required [(ngModel)]="ISBN" >
+<br><br>
+   
+
+    <div class="botonera">
+      <button type="submit" (click)="!formularioValido() ; submitForm()">Registrar</button>
+      <button (click)="closeModal()" class="cerrar" >Cerrar</button>
+    </div>
+    
+  </form>
+</div>
+<div *ngIf="formularioEditarActivo" class="registrar2">
+  <h2>Editar Registro</h2>
+<form (submit)="actualizarRegistroL()">
+  <label for="nombre">Titulo:</label>
+  <input type="text" id="nombres" name="nombres" required [(ngModel)]="this.registroSeleccionado.titulo">
+
+  <label for="apellido">Genero:</label>
+  <input type="text" id="apellidos" name="apellidos" required [(ngModel)]="this.registroSeleccionado.genero">
+  <br><br>
+  <label for="contrasena">Año de Publicacion:</label>
+  <input type="number" id="email"  class="yyy" name="email" required [(ngModel)]="this.registroSeleccionado.aniopublicacion">
+<br><br>
+  <label for="descripcion">ISBN:</label>
+  <input type="number"  class="yyy"  id="edad" name="edad"   required [(ngModel)]="this.registroSeleccionado.ISBN" >
+<br><br>
+ 
+    <br><br>
+        <div class="botonera">
+          <button type="submit">Guardar Cambios</button>
+          <button (click)="cerrarFormularioEditarL()" class="cerrar">Cerrar</button>
+        </div>
+
+ 
+
+  </form>
+</div>
+
+  </div>

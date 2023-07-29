@@ -1,0 +1,27 @@
+[
+{
+    "nombre":"clientes",
+    "redirect":"/dashboard/clientes"
+},
+{
+    "nombre":"libros",
+    "redirect":"/dashboard/libros"
+},
+{
+    "nombre":"autores",
+    "redirect":"/dashboard/autores"
+},
+{
+    "nombre":"clientes",
+    "redirect":"/dashboard/clientes"
+},
+{
+    "nombre":"libros",
+    "redirect":"/dashboard/libros"
+},
+{
+    "nombre":"autores",
+    "redirect":"/dashboard/autores"
+}
+
+]

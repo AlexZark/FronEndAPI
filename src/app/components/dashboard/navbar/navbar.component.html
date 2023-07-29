@@ -1,0 +1,70 @@
+<mat-sidenav-container class="sidenav-container">
+  <!-- Menú lateral (sidenav) -->
+  <mat-sidenav #sidenav mode="side" [opened]="false"  style="width: 150px;"> 
+    <div class="user-info">
+      <!-- Mostrar información del usuario que ha iniciado sesión -->
+      <p>Bienvenido, {{ currentUser }}</p>
+    </div>
+    <!-- Lista de opciones del menú lateral -->
+    <mat-grid-list cols="1" rowHeight="50px">
+      <mat-grid-tile>
+        <button mat-button routerLink="/dashboard">Clientes</button>
+      </mat-grid-tile>
+      <!--<mat-grid-tile>
+        <button mat-button routerLink="/dashboard/autores">Autores</button>
+      </mat-grid-tile>-->
+      <mat-grid-tile>
+        <button mat-button routerLink="/dashboard/libros">Libros</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-sidenav>
+
+  <!-- Barra de herramientas (toolbar) -->
+  <mat-toolbar color="black"  style="width: 100%; min-height: 64px;">
+    <button mat-icon-button (click)="sidenav.toggle()" aria-label="Menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <span>AppUsers</span>
+    <span class="example-spacer"></span>
+
+    <button mat-button routerLink="/dashboard">Clientes</button>
+    <button mat-button routerLink="/dashboard/libros">Libros</button>
+
+    <span class="example-spacer"></span>
+
+    <button mat-button routerLink="/dashboard">Inicio</button>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+ 
+    
+    <button mat-icon-button class="example-icon" routerLink="/" aria-label="Example icon-button with menu icon">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>
+</mat-sidenav-container>
